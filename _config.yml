@@ -5,14 +5,13 @@ markdown: kramdown
 permalink: /artikel/:title/
 
 collections:
-pages:
-output: true
-permalink: /:name/
+  pages:
+    output: true
+    permalink: /:name/
 
 defaults:
-
-- scope:
-  path: ""
-  type: posts
-  values:
-  layout: post
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
