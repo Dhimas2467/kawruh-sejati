@@ -1,0 +1,9 @@
+title: Kawruh Sejati
+description: Wacana, pemahaman, dan laku kehidupan
+lang: id
+markdown: kramdown
+permalink: /artikel/:title/
+collections:
+  pages:
+    output: true
+    permalink: /:name/
