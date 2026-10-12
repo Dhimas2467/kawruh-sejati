@@ -1,0 +1,19 @@
+---
+
+layout: default
+title: Artikel Kawruh Sejati
+description: Daftar tulisan dan dokumentasi Kawruh Sejati.
+permalink: /artikel/
+
+<h2>Artikel Kawruh Sejati</h2><p>Daftar tulisan mengenai hakikat kehidupan, pengenalan diri, cipta, rasa, karsa, dan laku kehidupan.</p><ul>
+{% assign daftar = site.posts | sort: "date" | reverse %}
+{% for artikel in daftar %}
+  <li>
+    <a href="{{ artikel.url | relative_url }}">{{ artikel.title }}</a>
+    <br>
+    <small>{{ artikel.date | date: "%d-%m-%Y" }}</small>
+  </li>
+{% else %}
+  <li>Belum ada artikel yang diterbitkan.</li>
+{% endfor %}
+</ul>
