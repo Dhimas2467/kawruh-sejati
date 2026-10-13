@@ -5,7 +5,7 @@ window.DAFTAR_ARTIKEL = [
   gambar: "kawruh-sejati2.jpg",
   alt: "Ilustrasi Kawruh Sejati",
   ringkasan: "Pembahasan mengenai hakikat pengetahuan, kesadaran, kenyataan, kebenaran, dan penerapan pemahaman dalam laku kehidupan."
-  }
+  },
   {
     judul: "Refleksi sebagai Jalan Perbaikan Diri",
     url: "jalan-perbaikan-diri.html",
