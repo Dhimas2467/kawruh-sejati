@@ -1,0 +1,109 @@
+
+name: Update Sitemap
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - sitemap.xml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate sitemap.xml
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build sitemap
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const vm = require('vm');
+          const path = require('path');
+
+          const base = 'https://dhimas2467.github.io/kawruh-sejati/';
+          const baseUrl = new URL(base);
+          const basePath = baseUrl.pathname;
+
+          const sandbox = { window: {} };
+          const source = fs.readFileSync('daftar-artikel.js', 'utf8');
+
+          vm.runInNewContext(source, sandbox);
+
+          const articles = Array.isArray(sandbox.window.DAFTAR_ARTIKEL)
+            ? sandbox.window.DAFTAR_ARTIKEL
+            : [];
+
+          const urls = new Set([base]);
+
+          for (const article of articles) {
+            if (!article.url) continue;
+
+            const url = new URL(article.url, base);
+
+            if (url.origin !== baseUrl.origin) continue;
+            if (!url.pathname.startsWith(basePath)) continue;
+
+            const relativePath = decodeURIComponent(
+              url.pathname.slice(basePath.length)
+            );
+
+            if (!relativePath || relativePath.startsWith('..')) continue;
+
+            const filePath = path.resolve(relativePath);
+            const rootPath = path.resolve('.');
+
+            if (!filePath.startsWith(rootPath + path.sep)) continue;
+            if (!fs.existsSync(filePath)) continue;
+            if (!fs.statSync(filePath).isFile()) continue;
+
+            url.hash = '';
+            url.search = '';
+            urls.add(url.href);
+          }
+
+          const xmlEscape = value => value
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&apos;');
+
+          const entries = [...urls].map(url =>
+            `  <url>\n    <loc>${xmlEscape(url)}</loc>\n  </url>`
+          );
+
+          const xml = [
+            '<?xml version="1.0" encoding="UTF-8"?>',
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+            ...entries,
+            '</urlset>',
+            ''
+          ].join('\n');
+
+          fs.writeFileSync('sitemap.xml', xml);
+          console.log(`Sitemap dibuat: ${urls.size} URL`);
+          NODE
+
+      - name: Save updated sitemap
+        run: |
+          git add sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Sitemap tidak berubah."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Update sitemap.xml"
+            git push
+          fi
