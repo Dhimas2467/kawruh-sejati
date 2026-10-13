@@ -1,5 +1,12 @@
 window.DAFTAR_ARTIKEL = [
   {
+judul: "Sejatining Janma Manusa",
+url: "https://dhimas2467.github.io/kawruh-sejati/sejatining-janma-manusa.html",
+gambar: "janma-manusa.jpg",
+alt: "Ilustrasi Janma Manusa",
+ringkasan: "Sejatining Janma Manusa dalam Kawruh Sejati membahas hakikat manusia melalui Kesadaran, Cipta, Rasa, Karsa, dan laku kehidupan."
+},
+  {
 judul: "Pembersihan Cipta",
 url: "pembersihan-cipta.html",
 gambar: "cipta-jernih.jpg",
