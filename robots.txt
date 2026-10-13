@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dhimas2467.github.io/kawruh-sejati/sitemap.xml
