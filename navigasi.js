@@ -58,7 +58,7 @@
 
       <a href="https://twitter.com/intent/tweet?text=${t}"
          target="_blank" rel="noopener noreferrer" aria-label="X">
-        <img src="https://cdn.simpleicons.org/x/000000" alt="X">
+        <img src="https://cdn.simpleicons.org/x/ffffff" alt="X">
       </a>
 
       <button type="button" class="share-instagram" aria-label="Instagram">
