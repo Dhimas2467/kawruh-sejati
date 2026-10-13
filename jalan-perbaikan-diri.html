@@ -24,15 +24,15 @@
 --panel:rgba(18,13,9,.82);
 --garis:rgba(181,139,89,.4);
 }
-• {box-sizing:border-box;}
+* {box-sizing:border-box;}
 body {margin:0; background:var(--kayu-gelap); color:var(--teks); font-family:Georgia,"Times New Roman",serif; line-height:1.8;}
 header {background:var(--kayu); color:var(--teks); padding:24px 18px; text-align:center; border-bottom:1px solid var(--garis);}
 header a {color:inherit; text-decoration:none;}
 .brand {margin:0; font-family:Arial,sans-serif; font-size:clamp(1.25rem,4vw,1.8rem); letter-spacing:.08em; font-weight:700;}
 .tagline {margin:5px 0 0; font-family:Arial,sans-serif; font-size:.92rem; color:var(--emas);}
-main {max-width:900px; width:calc(100% - 32px); margin:30px auto; padding:clamp(20px,5vw,46px); background:var(--panel); border:1px solid var(--garis); border-radius:12px;}
-h1,h2,h3 {color:var(--emas); line-height:1.35;}
-h1 {text-align:center; font-family:Arial,sans-serif; font-size:clamp(1.6rem,5vw,2.25rem); margin:0 0 20px;}
+
+main {display: block; box-sizing: border-box; width: calc(100% - 32px); max-width: 900px; margin: 30px auto; padding: clamp(20px, 5vw, 46px); background: var(--panel); border: 1px solid var(--garis); border-radius: 12px;}
+
 .gambar-artikel {display:block; width:min(100%,620px); height:auto; margin:0 auto 26px;border-radius:10px;}
 .isi-artikel p,
 .isi-artikel li {text-align:justify; text-justify:inter-word; line-height:1.85; hyphens:auto;}
