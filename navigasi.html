@@ -1,51 +1,7 @@
-<nav class="navigasi-utama" aria-label="Menu utama">
-  <a href="index.html#beranda" class="tombol-beranda terpilih"
-     data-halaman="beranda" aria-label="Beranda" title="Beranda">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M3 10.5 12 3l9 7.5"></path>
-      <path d="M5.5 9.5V21h13V9.5"></path>
-      <path d="M9.5 21v-7h5v7"></path>
-    </svg>
-  </a>
-  <a href="index.html#identitas" data-halaman="identitas">Identitas</a>
-  <a href="index.html#daftar-isi" data-halaman="daftar-isi">Daftar Isi</a>
-  <a href="index.html#dokumentasi" data-halaman="dokumentasi">Dokumentasi</a>
-</nav>
-
-<script>
-function bagikanHalaman(event) {
-  event.preventDefault();
-
-  if (navigator.share) {
-    navigator.share({
-      title: document.title,
-      text: document.title,
-      url: window.location.href
-    }).catch(function(error) {
-      if (error.name !== "AbortError") {
-        console.error("Gagal membagikan halaman:", error);
-      }
-    });
-  } else if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(window.location.href)
-      .then(function() {
-        alert("Tautan artikel berhasil disalin.");
-      })
-      .catch(function() {
-        prompt("Salin tautan artikel ini:", window.location.href);
-      });
-  } else {
-    prompt("Salin tautan artikel ini:", window.location.href);
-  }
-}
-</script>
-
-</nav>
-
 <style>
 .navigasi-utama {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -53,6 +9,7 @@ function bagikanHalaman(event) {
   background: rgba(24,16,11,.78);
   border-bottom: 1px solid #765638;
 }
+
 .navigasi-utama a {
   display: inline-flex;
   align-items: center;
@@ -68,18 +25,21 @@ function bagikanHalaman(event) {
   text-decoration: none;
   white-space: nowrap;
 }
+
 .navigasi-utama a:hover,
 .navigasi-utama a.terpilih {
   background: #76532f;
   border-color: #c49a52;
   color: #fff0d5;
 }
+
 .navigasi-utama a.tombol-beranda {
   flex: 0 0 32px;
   width: 32px;
   height: 32px;
   padding: 0;
 }
+
 .navigasi-utama a.tombol-beranda svg {
   display: block;
   width: 17px;
@@ -90,18 +50,135 @@ function bagikanHalaman(event) {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* BAGIKAN ARTIKEL */
+.bagikan-artikel {
+  margin: 28px auto 12px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(181,139,89,.4);
+  text-align: center;
+}
+
+.bagikan-artikel p {
+  margin: 0 0 10px;
+  color: var(--teks, #e9e0d0);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+.tombol-bagikan-grup {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.tombol-bagikan-grup a,
+.tombol-bagikan-grup button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+  min-width: 0;
+  padding: 6px 9px;
+  border: 1px solid #987447;
+  border-radius: 5px;
+  background: #244b3c;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tombol-bagikan-grup a:hover,
+.tombol-bagikan-grup button:hover {
+  background: #76532f;
+  border-color: #c49a52;
+}
+
 @media(max-width:560px) {
-  .navigasi-utama { gap: 5px; padding: 12px 5px; }
-  .navigasi-utama a { padding: 7px 8px; font-size: 11px; }
+  .navigasi-utama {
+    gap: 5px;
+    padding: 12px 5px;
+  }
+
+  .navigasi-utama a {
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+
   .navigasi-utama a.tombol-beranda {
-    flex-basis: 30px; width: 30px; height: 30px;
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .tombol-bagikan-grup {
+    gap: 5px;
+  }
+
+  .tombol-bagikan-grup a,
+  .tombol-bagikan-grup button {
+    padding: 6px 7px;
+    font-size: 10px;
   }
 }
+
 @media(max-width:360px) {
-  .navigasi-utama { gap: 4px; padding-left: 4px; padding-right: 4px; }
-  .navigasi-utama a { padding: 7px 6px; font-size: 10px; }
+  .navigasi-utama {
+    gap: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .navigasi-utama a {
+    padding: 7px 6px;
+    font-size: 10px;
+  }
+
   .navigasi-utama a.tombol-beranda {
-    flex-basis: 28px; width: 28px; height: 28px;
+    flex-basis: 28px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .tombol-bagikan-grup {
+    gap: 4px;
+  }
+
+  .tombol-bagikan-grup a,
+  .tombol-bagikan-grup button {
+    padding: 6px 5px;
+    font-size: 9px;
   }
 }
 </style>
+
+<nav class="navigasi-utama" aria-label="Menu utama">
+  <a href="index.html#beranda"
+     class="tombol-beranda"
+     data-halaman="beranda"
+     aria-label="Beranda"
+     title="Beranda">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 10.5 12 3l9 7.5"></path>
+      <path d="M5.5 9.5V21h13V9.5"></path>
+      <path d="M9.5 21v-7h5v7"></path>
+    </svg>
+  </a>
+
+  <a href="index.html#identitas"
+     data-halaman="identitas">Identitas</a>
+
+  <a href="index.html#daftar-isi"
+     data-halaman="daftar-isi">Daftar Isi</a>
+
+  <a href="index.html#dokumentasi"
+     data-halaman="dokumentasi">Dokumentasi</a>
+</nav>
