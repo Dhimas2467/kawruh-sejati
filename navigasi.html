@@ -10,6 +10,39 @@
   <a href="index.html#identitas" data-halaman="identitas">Identitas</a>
   <a href="index.html#daftar-isi" data-halaman="daftar-isi">Daftar Isi</a>
   <a href="index.html#dokumentasi" data-halaman="dokumentasi">Dokumentasi</a>
+
+  <a href="index.html#dokumentasi">Dokumentasi</a>
+  <a href="#" id="tombol-share" onclick="bagikanHalaman(event)">Share</a>
+</nav>
+
+<script>
+function bagikanHalaman(event) {
+  event.preventDefault();
+
+  if (navigator.share) {
+    navigator.share({
+      title: document.title,
+      text: document.title,
+      url: window.location.href
+    }).catch(function(error) {
+      if (error.name !== "AbortError") {
+        console.error("Gagal membagikan halaman:", error);
+      }
+    });
+  } else if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(window.location.href)
+      .then(function() {
+        alert("Tautan artikel berhasil disalin.");
+      })
+      .catch(function() {
+        prompt("Salin tautan artikel ini:", window.location.href);
+      });
+  } else {
+    prompt("Salin tautan artikel ini:", window.location.href);
+  }
+}
+</script>
+
 </nav>
 
 <style>
