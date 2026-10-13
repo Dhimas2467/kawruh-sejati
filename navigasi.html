@@ -1,0 +1,77 @@
+<nav class="navigasi-utama" aria-label="Menu utama">
+  <a href="index.html#beranda" class="tombol-beranda terpilih"
+     data-halaman="beranda" aria-label="Beranda" title="Beranda">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 10.5 12 3l9 7.5"></path>
+      <path d="M5.5 9.5V21h13V9.5"></path>
+      <path d="M9.5 21v-7h5v7"></path>
+    </svg>
+  </a>
+  <a href="index.html#identitas" data-halaman="identitas">Identitas</a>
+  <a href="index.html#daftar-isi" data-halaman="daftar-isi">Daftar Isi</a>
+  <a href="index.html#dokumentasi" data-halaman="dokumentasi">Dokumentasi</a>
+</nav>
+
+<style>
+.navigasi-utama {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 8px;
+  background: rgba(24,16,11,.78);
+  border-bottom: 1px solid #765638;
+}
+.navigasi-utama a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 7px 11px;
+  border: 1px solid #987447;
+  border-radius: 7px;
+  background: #244b3c;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.navigasi-utama a:hover,
+.navigasi-utama a.terpilih {
+  background: #76532f;
+  border-color: #c49a52;
+  color: #fff0d5;
+}
+.navigasi-utama a.tombol-beranda {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+.navigasi-utama a.tombol-beranda svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: white;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media(max-width:560px) {
+  .navigasi-utama { gap: 5px; padding: 12px 5px; }
+  .navigasi-utama a { padding: 7px 8px; font-size: 11px; }
+  .navigasi-utama a.tombol-beranda {
+    flex-basis: 30px; width: 30px; height: 30px;
+  }
+}
+@media(max-width:360px) {
+  .navigasi-utama { gap: 4px; padding-left: 4px; padding-right: 4px; }
+  .navigasi-utama a { padding: 7px 6px; font-size: 10px; }
+  .navigasi-utama a.tombol-beranda {
+    flex-basis: 28px; width: 28px; height: 28px;
+  }
+}
+</style>
