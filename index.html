@@ -462,10 +462,9 @@
           kartu.className = "kartu-artikel";
 
           if (item.gambar) {
-            var tautanGambar = buatTautan(
-              item.judul || "Baca artikel",
-              item.url
-            );
+            var tautanGambar = document.createElement("a");
+            tautanGambar.href = item.url || "#";
+            tautanGambar.setAttribute("aria-label", item.judul || "Baca artikel");
             tautanGambar.className = "tautan-gambar";
 
             var gambar = document.createElement("img");
