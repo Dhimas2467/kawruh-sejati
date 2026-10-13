@@ -1,129 +1,263 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kawruh Sejati | Wacana dan Dokumentasi</title>
-  <meta name="description" content="Dokumentasi Kawruh Sejati tentang hakikat panguripan, pengenalan diri, cipta, rasa, karsa, dan laku kehidupan.">
-  <meta name="theme-color" content="#315b46">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.8;
-      color: #292f2a;
-      background: #f7f7f1;
-    }
-
-    header {
-      background: #315b46;
-      color: #fff;
-      padding: 38px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      letter-spacing: 2px;
-      font-size: 30px;
-    }
-
-    header p {
-      margin: 8px 0 0;
-    }
-
-    nav {
-      background: #e7ebdf;
-      padding: 12px;
-      text-align: center;
-    }
-
-    nav a {
-      display: inline-block;
-      margin: 4px 10px;
-      color: #315b46;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      max-width: 850px;
-      margin: auto;
-      padding: 24px 18px 40px;
-    }
-
-    section {
-      margin-bottom: 28px;
-      padding: 22px;
-      background: #fff;
-      border-radius: 8px;
-    }
-
-    h2 {
-      margin-top: 0;
-      color: #315b46;
-    }
-
-    footer {
-      padding: 22px;
-      text-align: center;
-      color: #666;
-      border-top: 1px solid #d8ddd3;
-      font-size: 14px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kawruh Sejati | Kawruh dan Laku Kehidupan</title>
+<meta name="description" content="Kawruh Sejati: pemahaman tentang hakikat kehidupan manusia dan penerapannya dalam laku kehidupan.">
+<meta name="theme-color" content="#21150f">
+<style>
+:root{
+  --kayu:#21150f;--kayu-gelap:#160f0b;--kayu-terang:#382519;
+  --teks:#e9e0d0;--emas:#c49a52;--hijau:#244b3c;
+  --panel:rgba(18,13,9,.82);--garis:rgba(181,139,89,.4)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.8;color:var(--teks);
+  background-color:var(--kayu);
+  background-image:
+    repeating-linear-gradient(178deg,transparent 0,rgba(0,0,0,.20) 2px,transparent 4px,rgba(142,94,57,.11) 6px,transparent 9px,rgba(0,0,0,.22) 13px),
+    repeating-linear-gradient(2deg,#302016 0,#21160f 5px,#382519 9px,#25180f 14px,#302016 20px);
+  background-attachment:fixed
+}
+header{padding:24px 16px 20px;text-align:center;color:#f3e8d5;background:rgba(24,16,11,.48);border-bottom:1px solid #765638}
+.simbol-utama{display:block;width:min(55%,175px);height:auto;margin:0 auto 8px;object-fit:contain}
+header h1{margin:6px 0 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(27px,5vw,38px);line-height:1.3;letter-spacing:2px}
+header p{margin:4px 0 0;font-size:16px;color:#e4d4bd}
+nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;padding:13px 8px;background:rgba(24,16,11,.78);border-bottom:1px solid #765638}
+nav a{display:inline-flex;align-items:center;justify-content:center;min-width:0;padding:7px 11px;border:1px solid #987447;border-radius:7px;background:#244b3c;color:white;font-size:13px;font-weight:bold;text-decoration:none;white-space:nowrap}
+nav a:hover,nav a.terpilih{background:#76532f;border-color:var(--emas);color:#fff0d5}
+nav a.tombol-beranda{flex:0 0 32px;width:32px;height:32px;padding:0}
+nav a.tombol-beranda svg{display:block;width:17px;height:17px;fill:none;stroke:white;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+main{width:100%;max-width:900px;margin:0 auto;padding:20px 20px 30px}
+h2{margin:0 0 14px;color:#e8c783;font-family:Georgia,"Times New Roman",serif;font-size:clamp(23px,4.5vw,31px);line-height:1.35}
+p{margin:8px 0 14px}
+.pemisah{height:1px;margin:20px 0;border:0;background:rgba(202,173,128,.35)}
+.halaman{display:none}.halaman.aktif{display:block}
+.sambutan{background:rgba(20,15,11,.82);color:var(--teks);padding:16px 20px;border:1px solid rgba(196,154,82,.35);border-left:4px solid var(--emas);border-radius:10px;margin-bottom:22px}
+.sambutan h2{font-size:clamp(21px,4vw,27px);margin:0 0 5px;color:#f0d49b}
+.sambutan p{font-size:15px;line-height:1.65;margin:0}
+.kartu-artikel{display:flex;align-items:center;gap:20px;padding:20px;border-radius:12px;background:var(--panel);border:1px solid var(--garis);box-shadow:0 3px 12px rgba(0,0,0,.18)}
+.kartu-artikel+.kartu-artikel{margin-top:18px}
+.gambar-artikel{flex:0 0 130px;width:130px;height:155px;object-fit:cover;border-radius:8px;border:1px solid var(--garis)}
+.judul-artikel{display:inline-block;margin-bottom:8px;color:#f0d49b;font-family:Georgia,"Times New Roman",serif;font-size:21px;font-weight:bold;line-height:1.4;text-decoration:none}
+.tautan{color:#e8c783;font-weight:bold;text-decoration:none}
+.tautan:hover,.judul-artikel:hover{color:#fff0d5;text-decoration:underline}
+.navigasi-artikel{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:22px;padding:14px 0}
+.navigasi-artikel button{border:1px solid #987447;border-radius:7px;padding:10px 13px;background:#493321;color:#fff0d5;font-size:13px;font-weight:bold;cursor:pointer}
+.navigasi-artikel button:hover:not(:disabled){background:#76532f}
+.navigasi-artikel button:disabled{background:#51483f;color:#aaa096;cursor:not-allowed}
+#nomor-halaman-artikel{font-size:13px;color:var(--teks);text-align:center}
+.tautan-blog{max-width:900px;margin:0 auto;padding:18px 15px 25px;text-align:center;border-top:1px solid rgba(202,173,128,.35)}
+.tautan-blog a{display:inline-block;padding:10px 18px;border:1px solid #987447;border-radius:8px;background:#244b3c;color:white;font-weight:bold;text-decoration:none}
+.tautan-blog a:hover{background:#76532f}
+.keterangan{color:#cbbba5;font-size:14px}
+@media(max-width:560px){
+  .navigasi-artikel{gap:6px}.navigasi-artikel button{padding:9px 8px;font-size:11px}#nomor-halaman-artikel{font-size:11px}
+  header{padding:18px 12px}.simbol-utama{width:min(55%,155px)}header p{font-size:15px}
+  nav{gap:5px;padding:12px 5px}nav a{padding:7px 8px;font-size:11px}nav a.tombol-beranda{flex-basis:30px;width:30px;height:30px}
+  main{padding:17px 17px 25px}.sambutan{padding:13px 15px;margin-bottom:18px}.sambutan p{font-size:14px;line-height:1.6}
+  .kartu-artikel{flex-direction:column;align-items:stretch;gap:12px;padding:16px}.gambar-artikel{width:100%;height:145px;flex-basis:auto}.judul-artikel{font-size:20px}
+  body{background-attachment:scroll}
+}
+@media(max-width:360px){nav{gap:4px;padding-left:4px;padding-right:4px}nav a{padding:7px 6px;font-size:10px}nav a.tombol-beranda{flex-basis:28px;width:28px;height:28px}}
+</style>
 </head>
 <body>
+<header>
+  <h1>KAWRUH SEJATI</h1>
+  <p>Pemahaman dan Laku Kehidupan</p>
+</header>
 
-  <header>
-    <h1>KAWRUH SEJATI</h1>
-    <p>Wacana, pemahaman, dan laku kehidupan</p>
-  </header>
+<nav aria-label="Menu utama">
+  <a href="#beranda" class="tombol-beranda terpilih" data-halaman="beranda" aria-label="Beranda" title="Beranda">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path><path d="M9.5 21v-7h5v7"></path></svg>
+  </a>
+  <a href="#identitas" data-halaman="identitas">Identitas</a>
+  <a href="#daftar-isi" data-halaman="daftar-isi">Daftar Isi</a>
+  <a href="#dokumentasi" data-halaman="dokumentasi">Dokumentasi</a>
+</nav>
 
-  <nav>
-    <a href="./">Beranda</a>
-    <a href="#tentang">Tentang</a>
-    <a href="#artikel">Artikel</a>
-    <a href="#identitas">Identitas</a>
-  </nav>
+<main>
+  <section id="beranda" class="halaman aktif">
+    <div class="sambutan">
+      <h2>Selamat Datang</h2>
+      <p>Kawruh Sejati merupakan tuntunan untuk memahami hakikat kehidupan manusia dan mewujudkan pemahaman tersebut dalam laku kehidupan sehari-hari.</p>
+    </div>
+    <hr class="pemisah">
+    <h2>Artikel</h2>
+    <div id="daftar-artikel" aria-live="polite"></div>
+    <div id="navigasi-artikel" class="navigasi-artikel" aria-label="Navigasi halaman artikel">
+      <button id="artikel-sebelumnya" type="button" disabled>← Artikel Sebelumnya</button>
+      <span id="nomor-halaman-artikel">Halaman 1</span>
+      <button id="artikel-berikutnya" type="button">Artikel Berikutnya →</button>
+    </div>
+  </section>
 
-  <main>
-    <section id="tentang">
-      <h2>Tentang Kawruh Sejati</h2>
-      <p>
-        Kawruh Sejati merupakan wacana pemahaman mengenai
-        hakikat kehidupan, pengenalan diri, serta penataan
-        cipta, rasa, dan karsa dalam laku kehidupan.
-      </p>
-      <p>
-        Website ini menjadi wadah dokumentasi dan penyajian
-        tulisan untuk memperluas pemahaman mengenai Kawruh Sejati.
-      </p>
-    </section>
+  <section id="identitas" class="halaman">
+    <h2>Identitas Kawruh Sejati</h2>
+    <p>Kawruh Sejati merupakan kawruh tentang hakikat kehidupan manusia, pemahaman terhadap diri, dan tuntunan untuk menjalani kehidupan dengan benar.</p>
+    <p>Kawruh Sejati menempatkan pemahaman sebagai dasar laku. Pengetahuan tidak berhenti sebagai gagasan, melainkan diwujudkan dalam sikap, keputusan, tindakan, dan tanggung jawab sehari-hari.</p>
+    <p>Dalam laku kehidupan, Cipta, Rasa, dan Karsa menjadi bagian penting dari upaya memahami diri serta membentuk kualitas kehidupan.</p>
+    <p class="keterangan">Halaman identitas ini dapat disempurnakan sesuai rumusan resmi Kawruh Sejati.</p>
+  </section>
 
-    <section id="artikel">
-      <h2>Artikel Kawruh Sejati</h2>
-      <p>
-        Tulisan-tulisan Kawruh Sejati akan disajikan di sini
-        dan dikembangkan melalui sistem pengelolaan artikel.
-      </p>
-    </section>
+  <section id="daftar-isi" class="halaman">
+    <h2>Daftar Isi</h2>
+    <p>Daftar artikel Kawruh Sejati tersedia di bawah ini.</p>
+    <div id="daftar-isi-artikel"></div>
+  </section>
 
-    <section id="identitas">
-      <h2>Identitas</h2>
-      <p>
-        Kawruh Sejati — Wacana dan Dokumentasi.
-      </p>
-    </section>
-  </main>
+  <section id="dokumentasi" class="halaman">
+    <h2>Dokumentasi</h2>
+    <p>Laman ini memuat dokumentasi dan tulisan mengenai Kawruh Sejati.</p>
+    <div id="daftar-dokumentasi"></div>
+  </section>
+</main>
 
-  <footer>
-    <p>KAWRUH SEJATI</p>
-  </footer>
+<div class="tautan-blog"><a href="#beranda" data-halaman="beranda">Kawruh Sejati</a></div>
 
+<script>
+/*
+  Tambahkan atau ubah artikel di dalam daftar di bawah ini.
+  Setiap artikel dapat memiliki judul, ringkasan, tautan, dan gambar.
+*/
+var DAFTAR_ARTIKEL = [
+  {
+    judul: "Mengenal Kawruh Sejati",
+    ringkasan: "Pengantar untuk memahami arah, dasar, dan tujuan Kawruh Sejati dalam kehidupan manusia.",
+    url: "#identitas",
+    gambar: "",
+    alt: "Ilustrasi alam"
+  },
+  {
+    judul: "Cipta, Rasa, dan Karsa",
+    ringkasan: "Memahami peran Cipta, Rasa, dan Karsa dalam kesadaran diri dan laku kehidupan.",
+    url: "#identitas",
+    gambar: "",
+    alt: "Ilustrasi alam"
+  },
+  {
+    judul: "Pemahaman dan Laku Kehidupan",
+    ringkasan: "Pemahaman memperoleh makna ketika diwujudkan dalam sikap dan tindakan nyata sehari-hari.",
+    url: "#identitas",
+    gambar: "",
+    alt: "Ilustrasi alam"
+  }
+];
+
+var artikelPerHalaman = 3;
+var halamanArtikel = 0;
+var semuaArtikel = DAFTAR_ARTIKEL;
+
+function buatKartuArtikel(artikel){
+  var kartu = document.createElement('article');
+  kartu.className = 'kartu-artikel';
+
+  if (artikel.gambar) {
+    var gambar = document.createElement('img');
+    gambar.src = artikel.gambar;
+    gambar.alt = artikel.alt || artikel.judul;
+    gambar.className = 'gambar-artikel';
+    kartu.appendChild(gambar);
+  }
+
+  var isi = document.createElement('div');
+  var judul = document.createElement('a');
+  judul.href = artikel.url;
+  judul.className = 'judul-artikel';
+  judul.textContent = artikel.judul;
+
+  var ringkasan = document.createElement('p');
+  ringkasan.textContent = artikel.ringkasan;
+
+  var tautan = document.createElement('a');
+  tautan.href = artikel.url;
+  tautan.className = 'tautan';
+  tautan.textContent = 'Baca selengkapnya →';
+
+  isi.append(judul, ringkasan, tautan);
+  kartu.appendChild(isi);
+  return kartu;
+}
+
+function tampilkanArtikel(){
+  var wadah = document.getElementById('daftar-artikel');
+  wadah.replaceChildren();
+  var mulai = halamanArtikel * artikelPerHalaman;
+  semuaArtikel.slice(mulai, mulai + artikelPerHalaman).forEach(function(artikel){
+    wadah.appendChild(buatKartuArtikel(artikel));
+  });
+
+  var totalHalaman = Math.max(1, Math.ceil(semuaArtikel.length / artikelPerHalaman));
+  document.getElementById('nomor-halaman-artikel').textContent =
+    'Halaman ' + (halamanArtikel + 1) + ' dari ' + totalHalaman;
+  document.getElementById('artikel-sebelumnya').disabled = halamanArtikel === 0;
+  document.getElementById('artikel-berikutnya').disabled = halamanArtikel >= totalHalaman - 1;
+}
+
+document.getElementById('artikel-sebelumnya').addEventListener('click', function(){
+  if (halamanArtikel > 0) { halamanArtikel--; tampilkanArtikel(); }
+});
+document.getElementById('artikel-berikutnya').addEventListener('click', function(){
+  if ((halamanArtikel + 1) * artikelPerHalaman < semuaArtikel.length) {
+    halamanArtikel++; tampilkanArtikel();
+  }
+});
+
+function buatDaftarTautan(wadahId){
+  var wadah = document.getElementById(wadahId);
+  semuaArtikel.forEach(function(artikel){
+    var p = document.createElement('p');
+    var a = document.createElement('a');
+    a.href = artikel.url;
+    a.className = 'tautan';
+    a.textContent = artikel.judul + ' →';
+    p.appendChild(a);
+    wadah.appendChild(p);
+  });
+}
+
+function tampilkanHalaman(nama){
+  document.querySelectorAll('.halaman').forEach(function(halaman){
+    halaman.classList.remove('aktif');
+  });
+  document.querySelectorAll('nav a[data-halaman]').forEach(function(menu){
+    menu.classList.remove('terpilih');
+  });
+  var halamanTujuan = document.getElementById(nama);
+  if (!halamanTujuan) {
+    nama = 'beranda';
+    halamanTujuan = document.getElementById(nama);
+  }
+  halamanTujuan.classList.add('aktif');
+  var menuAktif = document.querySelector('nav a[data-halaman="' + nama + '"]');
+  if (menuAktif) menuAktif.classList.add('terpilih');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+document.querySelectorAll('[data-halaman]').forEach(function(menu){
+  menu.addEventListener('click', function(event){
+    event.preventDefault();
+    var nama = menu.dataset.halaman;
+    tampilkanHalaman(nama);
+    history.replaceState(null, '', '#' + nama);
+  });
+});
+
+window.addEventListener('load', function(){
+  tampilkanArtikel();
+  buatDaftarTautan('daftar-isi-artikel');
+  buatDaftarTautan('daftar-dokumentasi');
+  var nama = window.location.hash.replace('#', '');
+  if (['beranda','identitas','daftar-isi','dokumentasi'].includes(nama)) {
+    tampilkanHalaman(nama);
+  } else {
+    tampilkanHalaman('beranda');
+  }
+});
+</script>
 </body>
 </html>
