@@ -1,6 +1,13 @@
 window.DAFTAR_ARTIKEL = [
   {
 judul: "Sejatining Janma Manusa",
+url: "https://dhimas2467.github.io/kawruh-sejati/weninging-cipta.html",
+gambar: "cipta-wening.jpg",
+alt: "Ilustrasi Cipta Wening",
+ringkasan: "Weninging Cipta dalam Kawruh Sejati: pemaparan tentang kejernihan cipta, hubungannya dengan Tulusing Rasa dan Karsa Sejati, serta penerapannya."
+},
+  {
+judul: "Sejatining Janma Manusa",
 url: "https://dhimas2467.github.io/kawruh-sejati/sejatining-janma-manusa.html",
 gambar: "janma-manusa.jpg",
 alt: "Ilustrasi Janma Manusa",
