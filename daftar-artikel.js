@@ -1,6 +1,6 @@
 window.DAFTAR_ARTIKEL = [
   {
-judul: "Sejatining Janma Manusa",
+judul: "Weninging Cipta Dalam Kawruh Sejati",
 url: "https://dhimas2467.github.io/kawruh-sejati/weninging-cipta.html",
 gambar: "cipta-wening.jpg",
 alt: "Ilustrasi Cipta Wening",
