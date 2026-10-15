@@ -1,5 +1,12 @@
 window.DAFTAR_ARTIKEL = [
   {
+judul: "Hakikat Kesadaran Dalam Kawruh Sejati",
+url: "https://dhimas2467.github.io/kawruh-sejati/hakikat-kesadaran.html",
+gambar: "hakikat-kesadaran.jpg",
+alt: "Ilustrasi Hakikat Kesadaran",
+ringkasan: "Hakikat Kesadaran dalam Kawruh Sejati dipahami melalui Sapta Obahing Cipta, Rasa, dan Karsa serta perwujudannya dalam laku kehidupan."
+},
+  {
 judul: "Weninging Cipta Dalam Kawruh Sejati",
 url: "https://dhimas2467.github.io/kawruh-sejati/weninging-cipta.html",
 gambar: "cipta-wening.jpg",
