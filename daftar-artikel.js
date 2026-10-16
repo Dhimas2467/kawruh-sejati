@@ -1,5 +1,12 @@
 window.DAFTAR_ARTIKEL = [
   {
+judul: "Jatining Dhiri Dasar Laku Kehidupan",
+url: "jatining-dhiri.html",
+gambar: "jatining-dhiri.jpg",
+alt: "Ilustrasi Jatining Dhiri",
+ringkasan: "Jatining Dhiri menjadi dasar laku dalam Kawruh Sejati melalui mawas dhiri, Weninging Cipta, Tulusing Rasa, dan Utamaning Karsa."
+},
+  {
 judul: "Hakikat Kesadaran Dalam Kawruh Sejati",
 url: "https://dhimas2467.github.io/kawruh-sejati/hakikat-kesadaran.html",
 gambar: "hakikat-kesadaran.jpg",
