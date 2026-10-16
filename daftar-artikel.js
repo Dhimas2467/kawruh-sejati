@@ -13,6 +13,13 @@ gambar: "cipta-wening.jpg",
 alt: "Ilustrasi Cipta Wening",
 ringkasan: "Weninging Cipta dalam Kawruh Sejati: pemaparan tentang kejernihan cipta, hubungannya dengan Tulusing Rasa dan Karsa Sejati, serta penerapannya."
 },
+{
+judul: "Tidak Bergantung Banyaknya Ritual",
+url: "bukan-banyaknya-ritual.html",
+gambar: "bukan-ritual.jpg",
+alt: "Ilustrasi Bukan Ritual",
+ringkasan: "Kawruh Sejati tidak bergantung banyaknya ritual, tetapi pada pengenalan kasunyatan dan perubahan cipta, rasa, karsa, serta laku kehidupan."
+},
   {
 judul: "Sejatining Janma Manusa",
 url: "https://dhimas2467.github.io/kawruh-sejati/sejatining-janma-manusa.html",
